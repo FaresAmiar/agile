@@ -12,4 +12,16 @@ class Saiyan:
             self.ki -= self.KAMEHAMEHA_ATTACK
             s2.health -= self.KAMEHAMEHA_ATTACK
 
-        
+    def Getki(self):
+        return self.ki
+    def Gethealth(self):
+        return self.health
+    def GetKAMEHAMEHA_ATTACK(self):
+        return self.KAMEHAMEHA_ATTACK
+    def Setki(self,ki):
+        self.ki=ki
+    def Sethealth(self,health):
+        self.health=health
+    def SetKAMEHAMEHA_ATTACK(self,KAMEHAMEHA_ATTACK):
+        self.KAMEHAMEHA_ATTACK=KAMEHAMEHA_ATTACK
+    
