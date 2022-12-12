@@ -1,4 +1,4 @@
-import pytest
+#import pytest
 import math
 import Saiyan
 import Potara
@@ -13,7 +13,7 @@ class Test:
 		gokuKi = self.Goku.getKi()
 		vegetaHealth = self.Vegeta.getHealth()
 		self.Goku.kamehameha(self.Vegeta)
-		assert (self.Goku.getKi() == (gokuKi - self.Goku.KAMEHAMEHA_ATTACK))
+		assert (self.Goku.getKi() == (gokuKi - self.Goku.KAMEHAMEHA_ATTACK ))
 
 	def saiyanPotaraTest(self):
 		vegetaKi = self.Vegeta.getKi()
