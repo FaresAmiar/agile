@@ -7,7 +7,7 @@ class Saiyan:
         self.KAMEHAMEHA_ATTACK=30
         
     def kamehameha(self,s2):
-        if(s2 is not None and s2.getHealth() > 0):
+        if(s2 is not None and s2.getHealth() > 0 and self.getKi()>=self.KAMEHAMEHA_ATTACK):
             self.__ki = self.__ki - self.KAMEHAMEHA_ATTACK
             s2.setHealth(s2.getHealth() - self.KAMEHAMEHA_ATTACK)
 
