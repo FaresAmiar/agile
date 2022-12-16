@@ -1,10 +1,11 @@
 import Equipe as E
+import Saiyan
 from behave import *
 
 
 @given("Le nom d'une {equipe} et d'un {coach}")
 def step_impl(context, equipe, coach):
-    context.equipe = E.Equipe(equipe, coach)
+    context.equipe = E.Equipe(equipe, coach, [Saiyan.Saiyan(),Saiyan.Saiyan()])
     assert context.equipe is not None
 
 
