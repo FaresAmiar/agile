@@ -2,19 +2,21 @@
 import math
 import Saiyan
 import Potara
-		
+
 class Test:
 	def __init__(self):
 		self.Goku = Saiyan.Saiyan()
 		self.Vegeta = Saiyan.Saiyan()
 		self.potara = Potara.Potara(self.Vegeta)
-	
+
+#Test si la fonction Kamehameha s'execute correctement
 	def kamehamehaTest(self):
 		gokuKi = self.Goku.getKi()
 		vegetaHealth = self.Vegeta.getHealth()
 		self.Goku.kamehameha(self.Vegeta)
 		assert (self.Goku.getKi() == (gokuKi - self.Goku.KAMEHAMEHA_ATTACK ))
 
+# Test si la fonction improveKamehameha s'execute correctement
 	def saiyanPotaraTest(self):
 		vegetaKi = self.Vegeta.getKi()
 		gokuHealth = self.Goku.getHealth()
