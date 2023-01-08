@@ -1,0 +1,64 @@
+@startuml
+class Equipe {
+  -nom_equipe: string
+  -joueurs: Saiyan[]
+  +get_nom_equipe(): string
+  +get_joueurs(): Saiyan[]
+}
+
+class Coach {
+  -nom_coach: string
+  +get_nom_coach(): string
+}
+
+class Saiyan {
+  -ki: int
+  -health: int
+  +kamehameha(s2: Saiyan): void
+  +getKi(): int
+  +getHealth(): int
+  +setKi(ki: int): void
+  +setHealth(health: int): void
+}
+
+class Potara {
+  -s: Saiyan
+  +improveKamehameha(s2: Saiyan): void
+}
+
+class Match {
+  -equipe1: Equipe
+  -equipe2: Equipe
+  +affronter(): void
+  +ajouter_observateur(o: Observateur): void
+}
+
+class Fusion {
+  -Saiyan: Saiyan
+  +getSaiyan(): Saiyan
+}
+
+class EquipeFactory {
+  +creer_equipe(nom_equipe: string, saiyans: Tuple[int, int, string], coached: string): Equipe
+}
+
+class Observateur {
+  +update(gagnant: Equipe, perdant: Equipe): void
+}
+
+class Observable {
+  +ajouter_observateur(o: Observateur): void
+  +notifier_observateurs(gagnant: Equipe, perdant: Equipe): void
+}
+
+class AfficherMatch {
+  +update(gagnant: Equipe, perdant: Equipe): void
+}
+
+Equipe "1" -- "n" Saiyan
+Match "1" -- "2" Equipe
+Saiyan "1" -- "1" Fusion
+Saiyan "1" -- "1" Potara
+Equipe "1" -- "1" Coach
+Match <|-- Observable
+Observateur <|-- AfficherMatch
