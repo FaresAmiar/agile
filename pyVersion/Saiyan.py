@@ -1,10 +1,11 @@
 class Saiyan:
     _ki: int
     _health: int
-    def __init__(self, ki = 100, health = 100, KAMEHAMEHA_ATTACK = 30):
+    def __init__(self, ki = 100, health = 100, KAMEHAMEHA_ATTACK = 30, name = ""):
         self.__ki= ki
         self.__health=health
         self.KAMEHAMEHA_ATTACK=30
+        self.name = name
         
     def kamehameha(self,s2):
         if s2 is not None and s2.getHealth() > 0 and self.getKi()>=self.KAMEHAMEHA_ATTACK:

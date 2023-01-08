@@ -1,11 +1,12 @@
-import Coach as C
-import Saiyan
+from Coach import Coach
+from Saiyan import Saiyan
+from typing import List
 
 
 class Equipe:
-    def __init__(self, nom_equipe: str, nom_coach: str, joueurs: Saiyan):
+    def __init__(self, nom_equipe: str, nom_coach: str, joueurs: List[Saiyan]):
         self.__nom_equipe = nom_equipe
-        self.__coach = C.Coach(nom_coach)
+        self.__coach = Coach(nom_coach)
         self.__joueurs=joueurs
         self.capitaine=joueurs[0]
 
