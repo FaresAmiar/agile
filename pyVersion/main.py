@@ -13,6 +13,3 @@ if __name__ == '__main__':
 
     # Création d'une équipe avec un seul saiyan
     equipe2 = factory.creer_equipe("Equipe 2", [(800, 800, "Gohan")], "Piccolo")
-
-    # Création d'une équipe avec un saiyan dont on ne connaît que le nom
-    equipe3 = factory.creer_equipe("Equipe 3", [(None, None, "Trunks")], "Vegeta")

@@ -43,8 +43,8 @@ class Match(Observable):
 
                 # Si le saiyan 2 est K.O., l'équipe 1 remporte la victoire et le match s'arrête
                 if saiyan2.getHealth() <= 0:
-                    gagnant = self.equipe1
-                    perdant = self.equipe2
+                    self.gagnant = self.equipe1
+                    self.perdant = self.equipe2
                     break
             # Si le nombre aléatoire est égal à 2, c'est l'équipe 2 qui attaque en premier
             else:
@@ -60,8 +60,8 @@ class Match(Observable):
 
                 # Si le saiyan 1 est K.O., l'équipe 2 remporte la victoire et le match s'arrête
                 if saiyan1.getHealth() <= 0:
-                    gagnant = self.equipe2
-                    perdant = self.equipe1
+                    self.gagnant = self.equipe2
+                    self.perdant = self.equipe1
                     break
             
             nbTours = nbTours + 1
@@ -69,7 +69,7 @@ class Match(Observable):
                 [s.setKi(s.getKi()+30) for s in saiyans_equipe1+saiyans_equipe2]
             alea = 2 if alea == 1 else 1
         # Appel de la méthode update() de chaque observateur
-        self.notifier_observateurs(gagnant, perdant)
+        self.notifier_observateurs(self.gagnant, self.perdant)
     
     def get_gagnant(self):
         return self.gagnant

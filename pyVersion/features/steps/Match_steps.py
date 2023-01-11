@@ -23,3 +23,7 @@ def then_un_gagnant_est_determine(context):
         if(equipe1.getHealth() <= 0 or equipe2.getHealth() <= 0):
             deathCount = deathCount + 1
     assert (deathCount == 1)
+
+
+
+

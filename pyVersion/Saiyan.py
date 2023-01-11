@@ -8,7 +8,7 @@ class Saiyan:
         self.__health=health
         # Initialise la constante d'attaque par défaut
         self.KAMEHAMEHA_ATTACK=30
-        self.name = name
+        self.__name = name
 
     def kamehameha(self,s2):
         # Vérifie si l'objet ciblé est existant, a encore de la vie, et si l'objet qui appelle la méthode a suffisamment de ki pour utiliser cette attaque
@@ -23,10 +23,14 @@ class Saiyan:
         return self.__ki
     def getHealth(self):
         return self.__health
+    def getName(self):
+        return self.__name
     # Mutateurs pour changer les propriétés de l'objet
     def setKi(self,ki):
         self.__ki=ki
     def setHealth(self,health):
         self.__health=health
+    def setName(self,name):
+        self.__name=name
     '''def setKAMEHAMEHA_ATTACK(self,KAMEHAMEHA_ATTACK):
         self.KAMEHAMEHA_ATTACK=KAMEHAMEHA_ATTACK'''
