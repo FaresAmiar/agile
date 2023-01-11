@@ -56,13 +56,13 @@ class AfficherMatch {
 }
 
 Equipe "1" -- "n" Saiyan
-Match "1" -- "2" Equipe
-Saiyan "1" -- "1" Fusion
-Saiyan "1" -- "1" Potara
+Match "n" -- "2" Equipe
+Saiyan "0,1" -- "n" Fusion
+Saiyan "0,1" -- "1" Potara
 Equipe "1" -- "1" Coach
-Match <|-- Observable
-Observateur <|-- AfficherMatch
-EquipeFactory <|-- AfficherMatch
-Equipe <|-- EquipeFactory
-Saiyan <|-- EquipeFactory
+Match <|.. Observable
+Observateur <|.. AfficherMatch
+EquipeFactory <|.. AfficherMatch
+Equipe <|.. EquipeFactory
+Saiyan <|.. EquipeFactory
 
