@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from itertools import zip_longest
 
 from behave import *
 from EquipeFactory import EquipeFactory
@@ -17,4 +18,8 @@ def when_les_deux_equipes_saffrontent(context):
 
 @then("un gagnant est déterminé")
 def then_un_gagnant_est_determine(context):
-    assert (context.equipe1.get_joueurs()[0].getHealth() > 0 and context.equipe2.get_joueurs()[0].getHealth() <= 0) or (context.equipe1.get_joueurs()[0].getHealth() <= 0 and context.equipe2.get_joueurs()[0].getHealth() > 0)
+    deathCount = 0
+    for equipe1, equipe2 in zip_longest(context.equipe1.get_joueurs(), context.equipe2.get_joueurs(), fillvalue=None):
+        if(equipe1.getHealth() <= 0 or equipe2.getHealth() <= 0):
+            deathCount = deathCount + 1
+    assert (deathCount == 1)
