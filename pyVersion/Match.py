@@ -19,14 +19,18 @@ class Match(Observable):
         # Génération aléatoire d'un nombre entre 1 et 2 pour déterminer qui attaque en premier
         alea = random.randint(1, 2)
 
-        # Sélection aléatoire d'un saiyan de l'équipe 1 et de l'équipe 2
-        saiyan1 = random.choice(saiyans_equipe1)
-        saiyan2 = random.choice(saiyans_equipe2)
+        # Nombre de tours
+        nbTours = 1
 
         # Boucle infinie jusqu'à ce qu'un des deux saiyans soit K.O.
         while True:
+
+            # Sélection aléatoire d'un saiyan de l'équipe 1 et de l'équipe 2
+            saiyan1 = random.choice(saiyans_equipe1)
+            saiyan2 = random.choice(saiyans_equipe2)
+
             # Si le nombre aléatoire est égal à 1, c'est l'équipe 1 qui attaque en premier
-            if alea == 1:
+            if alea == 1 :
                 # Génération aléatoire d'un nombre entre 1 et 20 pour déterminer si le saiyan 1 est placé dans une Potara
                 alea_potara = random.randint(1, 20)
 
@@ -59,7 +63,11 @@ class Match(Observable):
                     gagnant = self.equipe2
                     perdant = self.equipe1
                     break
-
+            
+            nbTours = nbTours + 1
+            if nbTours % 5 == 0:
+                [s.setKi(s.getKi()+30) for s in saiyans_equipe1+saiyans_equipe2]
+            alea = 2 if alea == 1 else 1
         # Appel de la méthode update() de chaque observateur
         self.notifier_observateurs(gagnant, perdant)
     
