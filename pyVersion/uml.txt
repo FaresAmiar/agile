@@ -57,8 +57,8 @@ class AfficherMatch {
 
 Equipe "1" -- "n" Saiyan
 Match "n" -- "2" Equipe
-Saiyan "0,1" -- "n" Fusion
-Saiyan "0,1" -- "1" Potara
+Saiyan "n" -- "0,1" Fusion
+Saiyan "1" -- "0,1" Potara
 Equipe "1" -- "1" Coach
 Match <|.. Observable
 Observateur <|.. AfficherMatch
