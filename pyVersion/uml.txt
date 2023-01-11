@@ -62,3 +62,7 @@ Saiyan "1" -- "1" Potara
 Equipe "1" -- "1" Coach
 Match <|-- Observable
 Observateur <|-- AfficherMatch
+EquipeFactory <|-- AfficherMatch
+Equipe <|-- EquipeFactory
+Saiyan <|-- EquipeFactory
+
