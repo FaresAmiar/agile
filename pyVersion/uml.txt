@@ -60,9 +60,9 @@ Match "n" -- "2" Equipe
 Saiyan "n" -- "0,1" Fusion
 Saiyan "1" -- "0,1" Potara
 Equipe "1" -- "1" Coach
-Match <|.. Observable
+Match ..|> Observable
 Observateur <|.. AfficherMatch
-EquipeFactory <|.. AfficherMatch
-Equipe <|.. EquipeFactory
-Saiyan <|.. EquipeFactory
+EquipeFactory <.. AfficherMatch
+Equipe <.. EquipeFactory
+Saiyan <.. EquipeFactory
 
